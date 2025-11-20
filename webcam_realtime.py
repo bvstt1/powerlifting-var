@@ -1,10 +1,9 @@
 import cv2
 import tensorflow as tf
-
-from keypoints import Keypoint, Skeleton   # si los tienes en archivo separado
+from keypoints import Keypoint, Skeleton
 
 # ==== Cargar MoveNet Thunder ====
-model = tf.saved_model.load("../models/movenet_thunder")
+model = tf.saved_model.load("models/movenet_thunder")
 movenet = model.signatures['serving_default']
 
 def detect_keypoints_movenet(image_bgr):
